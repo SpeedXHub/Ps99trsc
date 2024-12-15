@@ -1,0 +1,102 @@
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "PS99_TRADESCAM_UI"
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling -- Prevent covering by game's UI
+screenGui.ResetOnSpawn = false -- Keeps GUI visible after respawning
+screenGui.DisplayOrder = 999 -- Makes GUI overlay all other UI elements
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Main Frame
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 300, 0, 200)
+mainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
+mainFrame.BackgroundColor3 = Color3.fromRGB(100, 100, 100) -- Semi-gray
+mainFrame.BackgroundTransparency = 0.2 -- Slightly transparent
+mainFrame.BorderSizePixel = 0
+mainFrame.Active = true -- Allow drag functionality
+mainFrame.Draggable = true -- Make it draggable
+mainFrame.ZIndex = 10 -- Overlay priority
+mainFrame.Parent = screenGui
+
+-- Rounded Corners (Symmetrical)
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 15) -- Rounded corners
+corner.Parent = mainFrame
+
+-- Neon Black Outline
+local outline = Instance.new("UIStroke")
+outline.Thickness = 3
+outline.Color = Color3.fromRGB(0, 0, 0) -- Black
+outline.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+outline.Parent = mainFrame
+
+-- Title Bar (Draggable section)
+local titleBar = Instance.new("TextLabel")
+titleBar.Text = "PS99 TRADE SCAM - v6.2 (Private)"
+titleBar.Size = UDim2.new(1, 0, 0, 30)
+titleBar.BackgroundTransparency = 0.5 -- Slight transparency
+titleBar.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+titleBar.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+titleBar.TextStrokeColor3 = Color3.fromRGB(0, 0, 0) -- Black outline
+titleBar.TextStrokeTransparency = 0 -- Fully visible outline
+titleBar.Font = Enum.Font.SourceSansBold
+titleBar.TextScaled = true
+titleBar.ZIndex = 11
+titleBar.Parent = mainFrame
+
+-- Info Section
+local infoLabel = Instance.new("TextLabel")
+infoLabel.Text = "NEW BETA, please report bugs In my YT!"
+infoLabel.Position = UDim2.new(0, 10, 0, 40)
+infoLabel.Size = UDim2.new(1, -20, 0, 50)
+infoLabel.BackgroundTransparency = 1
+infoLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+infoLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0) -- Black outline
+infoLabel.TextStrokeTransparency = 0 -- Fully visible outline
+infoLabel.Font = Enum.Font.SourceSans
+infoLabel.TextScaled = true
+infoLabel.TextWrapped = true
+infoLabel.ZIndex = 11
+infoLabel.Parent = mainFrame
+
+-- ON Button (Fixed Alignment and Larger)
+local onButton = Instance.new("TextButton")
+onButton.Text = "ON"
+onButton.Size = UDim2.new(0, 90, 0, 50) -- Increased size
+onButton.Position = UDim2.new(0.1, 0, 0.5, 0) -- Adjusted position
+onButton.BackgroundColor3 = Color3.fromRGB(50, 150, 50)
+onButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+onButton.TextStrokeColor3 = Color3.fromRGB(0, 0, 0) -- Black outline
+onButton.TextStrokeTransparency = 0 -- Fully visible outline
+onButton.Font = Enum.Font.SourceSansBold
+onButton.TextScaled = true
+onButton.ZIndex = 12
+onButton.Parent = mainFrame
+
+-- OFF Button (Fixed Alignment and Larger)
+local offButton = Instance.new("TextButton")
+offButton.Text = "OFF"
+offButton.Size = UDim2.new(0, 90, 0, 50) -- Increased size
+offButton.Position = UDim2.new(0.6, 0, 0.5, 0) -- Adjusted position
+offButton.BackgroundColor3 = Color3.fromRGB(150, 50, 50)
+offButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+offButton.TextStrokeColor3 = Color3.fromRGB(0, 0, 0) -- Black outline
+offButton.TextStrokeTransparency = 0 -- Fully visible outline
+offButton.Font = Enum.Font.SourceSansBold
+offButton.TextScaled = true
+offButton.ZIndex = 12
+offButton.Parent = mainFrame
+
+-- Footer Text
+local footerLabel = Instance.new("TextLabel")
+footerLabel.Text = "Made by JD SCRIPTS"
+footerLabel.Size = UDim2.new(1, 0, 0, 30)
+footerLabel.Position = UDim2.new(0, 0, 0.8, 0)
+footerLabel.BackgroundTransparency = 1
+footerLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+footerLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0) -- Black outline
+footerLabel.TextStrokeTransparency = 0 -- Fully visible outline
+footerLabel.Font = Enum.Font.SourceSans
+footerLabel.TextScaled = true
+footerLabel.ZIndex = 11
+footerLabel.Parent = mainFrame
